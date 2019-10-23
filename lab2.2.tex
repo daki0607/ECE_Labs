@@ -1,0 +1,57 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+
+\renewcommand{\contentsname}{Table of Contents}
+
+\begin{document}
+
+\title{Experiment 2.2 \\ Wheatstone Bridge}
+\author{Justin B, Aditya D}
+\date{\today}
+\maketitle
+
+\pagenumbering{roman}
+\newpage
+\tableofcontents
+\newpage 
+\pagenumbering{arabic}
+
+\section{Objectives}
+\section{Experimental Results}
+As labeled in Figure 12 \cite{labManual}, the following values were chosen:
+\begin{align*}
+    E   &= 12.0V \\
+    R_1 &= 100\Omega \\
+    R_2 &= 910\Omega \\
+    R_3 &= 0\!-\!200\Omega \\
+    R_x &= 960.7\Omega 
+\end{align*}
+The \(200\Omega\) potentiometer was chosen because the bridge is balanced when it has a resistance of \(106\Omega\), allowing for maximal variation.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{c | c }
+    Force (\(N\)) & Voltage (\(V\)) \\
+    \hline
+    1.226 & 0.167 \\
+    1.275 & 0.176 \\
+    1.271 & 0.182 \\
+    1.238 & 0.180 \\
+    1.245 & 0.176 \\
+\end{tabular}
+\caption{Force versus Voltage across bridge}
+\label{table:1}
+\end{table}
+
+\section{Discussion}
+\section{Conclusion}
+
+\newpage
+\addcontentsline{toc}{section}{References}
+\begin{thebibliography}{1}
+    \bibitem{labManual}
+    N. Dimopoulos, F. Gebali, \textit{Laboratory Manual: ECE 250, \\ Linear Circuits I (Edition 4)}, University of Victoria, Victoria, B.C, 2018.
+\end{thebibliography}
+
+\end{document}
