@@ -3,12 +3,13 @@
 \usepackage{bm}
 
 \renewcommand{\contentsname}{Table of Contents}
+\setlength{\parskip}{1em}
 
 \begin{document}
 
 \pagenumbering{roman}
 \title{Experiment 4.2\\Maximum Power Transfer}
-\author{Justin B., Aditya D.}
+\author{Justin B, Aditya D.}
 \date{\today}
 \maketitle
 \pagebreak
@@ -18,9 +19,9 @@
 \pagenumbering{arabic}
 
 \section{Objectives}
-When designing circuits, the maximum power transfer to a particular component may be a critical part of the design.
+When designing circuits, the maximum power transfer to a particular component may be a critical feature, so we must account for this factor in our design.
 In this experiment, we measure and model an unknown circuit as its Thevenin equivalent at steady state.
-Next, we design the load that draws the maximum power under certain constraints.
+Next, we design the load that draws the maximum power under certain constraints \cite{labManual}.
 
 \section{Experimental Results}
 We set the signal generator to output a voltage of \(\bm{V} = 7.00\angle 0^\circ V\), as suggested by the technician, to accomodate for the line and internal impedances by the time the signal gets to the Black Box.
@@ -31,14 +32,58 @@ The resulting phase is measured as \(\theta_v = \theta_i = 19^\circ\).
 Using the magnitude and phase, the load current phasor is \(\bm{I}_L = 0.04364\angle 19^\circ A\).
 
 Using the open circuit voltage phasor and the load current phasor, the Thevenin impedance is calculated as follows:
-
 \begin{align*}
     \bm{Z}_{TH} &= \frac{\bm{V}_{OC}}{\bm{I}_L} \\
                 &= \frac{0.835\angle 35^\circ V}{0.04364\angle 19^\circ A} \\
                 &= 9.929\angle 32^\circ \Omega.
 \end{align*}
 
+With the available components, we wired 7 capacitors with \(C_L = 490\mu F\) in parallel which resulted in \(R_L = 13.6\Omega\) for maximum power transfer.
+\newpage
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{c|c||c|c}
+    \(R_L (\Omega)\) & \(P (W)\) & & \\ \hline
+    20           & 19.0 & 10 & 24.0 \\
+    19           & 19.5 & 9 & 24.4 \\
+    18           & 20.0 & 8 & 24.8 \\
+    17           & 20.5 & 7 & 25.0 \\
+    16           & 21.0 & 6 & 25.0 \\
+    15           & 21.5 & 5 & 24.7 \\
+    14           & 22.0 & 4 & 23.8 \\
+    13           & 22.6 & 3 & 22.2 \\
+    12           & 23.1 & 2 & 19.5 \\
+    11           & 23.6 & 1 & 14.5 \\
+    \end{tabular}
+    \caption{Real power vs Load resistance}
+    \label{table:1}
+\end{table}
+
+Varying the load resistance, we obtain the following powers as shown in Table \ref{table:1}.
+
 \section{Discussion}
+As calculated in the Experimental Results, we obtain a Thevenin equivalent of:
+\begin{align*}
+    \bm{V}_{Th} = 0.835\angle 35^\circ \text{ and } \bm{Z}_{Th} = 9.929\angle 32^\circ
+\end{align*}
+
+For maximum power transfer to occur, \(\bm{Z}_{L} = \bm{Z}_{Th}^*\), however, due to component restrictions, \(X_L = -5.4133\).
+Therefore, 
+\begin{align*}
+    R_L &= \sqrt{R_{Th}^2 + \left(X_{Th} - X_L\right)^2} \\
+        &= \sqrt{(8.42)^2 + \left((5.26) - (-5.4133)\right)^2} \\
+        &= 13.6\Omega \text{ (Our estimate)}
+\end{align*}
+
+As seen in Table \ref{table:1}, the resistance that drew the maximum power was around \(7\Omega\).
+When measured, a final value of \(R_L = 7.2\Omega\) was obtained to maximize power delivered to the load.
+
+The true value of \(R_L\) was lower than expected, which may have been due to unknown impedances in the equipment used; however, this is likely not the true cause.
+
+
+
+
 \section{Conclusion}
 
 \newpage
