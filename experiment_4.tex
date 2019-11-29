@@ -1,0 +1,54 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{bm}
+
+\renewcommand{\contentsname}{Table of Contents}
+
+\begin{document}
+
+\pagenumbering{roman}
+\title{Experiment 4.2\\Maximum Power Transfer}
+\author{Justin B., Aditya D.}
+\date{\today}
+\maketitle
+\pagebreak
+
+\tableofcontents
+\pagebreak
+\pagenumbering{arabic}
+
+\section{Objectives}
+When designing circuits, the maximum power transfer to a particular component may be a critical part of the design.
+In this experiment, we measure and model an unknown circuit as its Thevenin equivalent at steady state.
+Next, we design the load that draws the maximum power under certain constraints.
+
+\section{Experimental Results}
+We set the signal generator to output a voltage of \(\bm{V} = 7.00\angle 0^\circ V\), as suggested by the technician, to accomodate for the line and internal impedances by the time the signal gets to the Black Box.
+We measure \(V_{OC} = 0.835 V\), \(V_{OC, rms} = 2.78 V\), and \(\theta_v = 35^\circ\).
+
+We connect a resistive load \(R_L = 9.92\Omega\) and measure \(I_{L, rms} = 43.64mA\).
+The resulting phase is measured as \(\theta_v = \theta_i = 19^\circ\).
+Using the magnitude and phase, the load current phasor is \(\bm{I}_L = 0.04364\angle 19^\circ A\).
+
+Using the open circuit voltage phasor and the load current phasor, the Thevenin impedance is calculated as follows:
+
+\begin{align*}
+    \bm{Z}_{TH} &= \frac{\bm{V}_{OC}}{\bm{I}_L} \\
+                &= \frac{0.835\angle 35^\circ V}{0.04364\angle 19^\circ A} \\
+                &= 9.929\angle 32^\circ \Omega.
+\end{align*}
+
+\section{Discussion}
+\section{Conclusion}
+
+\newpage
+\addcontentsline{toc}{section}{References}
+\begin{thebibliography}{1}
+    \bibitem{labManual}
+    N. Dimopoulos, F. Gebali, \textit{Laboratory Manual: ECE 250, \\ Linear Circuits I (Edition 4)}, University of Victoria, Victoria, B.C, 2018, pp.46-49.
+    
+\end{thebibliography}
+
+
+
+\end{document}
